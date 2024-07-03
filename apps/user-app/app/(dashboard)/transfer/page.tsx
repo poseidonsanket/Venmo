@@ -14,7 +14,7 @@ async function getBalance() {
   });
   return {
     amount: balance?.amount || 0,
-    locked: balance?.locked || 0,
+    locked: balance?.locked || 0,   
   };
 }
 
@@ -36,6 +36,7 @@ async function getOnRampTransactions() {
 export default async function () {
   const balance = await getBalance();
   const transactions = await getOnRampTransactions();
+  console.log(balance)
 
   return (
     <div className="w-screen">
